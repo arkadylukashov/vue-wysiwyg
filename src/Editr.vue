@@ -24,6 +24,11 @@ import bold from "./modules/bold.js";
 import italic from "./modules/italic.js";
 import underline from "./modules/underline.js";
 
+import text_center from "./modules/text_center.js";
+import text_right from "./modules/text_right.js";
+import text_left from "./modules/text_left.js";
+import text_justify from "./modules/text_justify.js";
+
 import headings from "./modules/headings.vue";
 import hyperlink from "./modules/hyperlink.vue";
 import list_ordered from "./modules/list_ordered.js";
@@ -38,6 +43,7 @@ import separator from "./modules/separator.js";
 
 const modules = [
     bold, italic, underline, separator,
+    text_left, text_center, text_right, text_justify, separator,
     headings, hyperlink,
     list_ordered, list_unordered, separator,
     image, table, separator,
@@ -149,7 +155,7 @@ export default {
 
         onInput: debounce(function() {
           this.emit();
-        }, 300),
+        }, 50),
 
         onFocus () {
           document.execCommand("defaultParagraphSeparator", false, this.mergedOptions.paragraphSeparator)
